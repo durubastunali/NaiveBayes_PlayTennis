@@ -1,0 +1,114 @@
+[
+    {
+        "Day": 1,
+        "Outlook": "Sunny",
+        "Temperature": "Hot",
+        "Humidity": "High",
+        "Wind": "Weak",
+        "PlayTennis": "No"
+    },
+    {
+        "Day": 2,
+        "Outlook": "Sunny",
+        "Temperature": "Hot",
+        "Humidity": "High",
+        "Wind": "Strong",
+        "PlayTennis": "No"
+    },
+    {
+        "Day": 3,
+        "Outlook": "Overcast",
+        "Temperature": "Hot",
+        "Humidity": "High",
+        "Wind": "Weak",
+        "PlayTennis": "Yes"
+    },
+    {
+        "Day": 4,
+        "Outlook": "Rain",
+        "Temperature": "Mild",
+        "Humidity": "High",
+        "Wind": "Weak",
+        "PlayTennis": "Yes"
+    },
+    {
+        "Day": 5,
+        "Outlook": "Rain",
+        "Temperature": "Cool",
+        "Humidity": "Normal",
+        "Wind": "Weak",
+        "PlayTennis": "Yes"
+    },
+    {
+        "Day": 6,
+        "Outlook": "Rain",
+        "Temperature": "Cool",
+        "Humidity": "Normal",
+        "Wind": "Strong",
+        "PlayTennis": "No"
+    },
+    {
+        "Day": 7,
+        "Outlook": "Overcast",
+        "Temperature": "Cool",
+        "Humidity": "Normal",
+        "Wind": "Strong",
+        "PlayTennis": "Yes"
+    },
+    {
+        "Day": 8,
+        "Outlook": "Sunny",
+        "Temperature": "Mild",
+        "Humidity": "High",
+        "Wind": "Weak",
+        "PlayTennis": "No"
+    },
+    {
+        "Day": 9,
+        "Outlook": "Sunny",
+        "Temperature": "Cool",
+        "Humidity": "Normal",
+        "Wind": "Weak",
+        "PlayTennis": "Yes"
+    },
+    {
+        "Day": 10,
+        "Outlook": "Rain",
+        "Temperature": "Mild",
+        "Humidity": "Normal",
+        "Wind": "Weak",
+        "PlayTennis": "Yes"
+    },
+    {
+        "Day": 11,
+        "Outlook": "Sunny",
+        "Temperature": "Mild",
+        "Humidity": "Normal",
+        "Wind": "Strong",
+        "PlayTennis": "Yes"
+    },
+    {
+        "Day": 12,
+        "Outlook": "Overcast",
+        "Temperature": "Mild",
+        "Humidity": "High",
+        "Wind": "Strong",
+        "PlayTennis": "Yes"
+    },
+    {
+        "Day": 13,
+        "Outlook": "Overcast",
+        "Temperature": "Hot",
+        "Humidity": "Normal",
+        "Wind": "Weak",
+        "PlayTennis": "Yes"
+    },
+    {
+        "Day": 14,
+        "Outlook": "Rain",
+        "Temperature": "Mild",
+        "Humidity": "High",
+        "Wind": "Strong",
+        "PlayTennis": "No"
+    }
+]
