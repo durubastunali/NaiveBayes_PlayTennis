@@ -193,6 +193,5 @@ def main():
     print("\nThe prediction made for", newInstance, "is", prediction)
 
 
-
 if __name__ == "__main__":
     main()
