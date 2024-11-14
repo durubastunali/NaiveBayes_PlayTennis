@@ -1,4 +1,13 @@
 import json
+import logging
+
+
+def loggingFormat():
+    logging.basicConfig(
+        filename='predictions.log',
+        level=logging.INFO,
+        format='%(asctime)s - %(message)s'
+    )
 
 
 def naiveBayes(instance):
@@ -55,6 +64,9 @@ def evaluate(data):
         testInstance.pop('Day')
         testInstance.pop('PlayTennis')
         prediction = naiveBayes(testInstance)
+
+        logging.info(f"Instance: {testInstance}, Predicted Outcome: {prediction}, Actual Outcome: {instance['PlayTennis']}")
+
         if prediction == instance['PlayTennis']:
             predictionCorrect += 1
         else:
@@ -146,6 +158,8 @@ def prepareData():
 
 
 def main():
+    loggingFormat()
+
     data = prepareData()
 
     yes = 0

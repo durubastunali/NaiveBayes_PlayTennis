@@ -1,0 +1,14 @@
+2024-11-14 13:51:15,443 - Instance: {'Outlook': 'Sunny', 'Temperature': 'Hot', 'Humidity': 'High', 'Wind': 'Weak'}, Predicted Outcome: No, Actual Outcome: No
+2024-11-14 13:51:15,444 - Instance: {'Outlook': 'Sunny', 'Temperature': 'Hot', 'Humidity': 'High', 'Wind': 'Strong'}, Predicted Outcome: No, Actual Outcome: No
+2024-11-14 13:51:15,444 - Instance: {'Outlook': 'Overcast', 'Temperature': 'Hot', 'Humidity': 'High', 'Wind': 'Weak'}, Predicted Outcome: Yes, Actual Outcome: Yes
+2024-11-14 13:51:15,445 - Instance: {'Outlook': 'Rain', 'Temperature': 'Mild', 'Humidity': 'High', 'Wind': 'Weak'}, Predicted Outcome: Yes, Actual Outcome: Yes
+2024-11-14 13:51:15,445 - Instance: {'Outlook': 'Rain', 'Temperature': 'Cool', 'Humidity': 'Normal', 'Wind': 'Weak'}, Predicted Outcome: Yes, Actual Outcome: Yes
+2024-11-14 13:51:15,445 - Instance: {'Outlook': 'Rain', 'Temperature': 'Cool', 'Humidity': 'Normal', 'Wind': 'Strong'}, Predicted Outcome: Yes, Actual Outcome: No
+2024-11-14 13:51:15,446 - Instance: {'Outlook': 'Overcast', 'Temperature': 'Cool', 'Humidity': 'Normal', 'Wind': 'Strong'}, Predicted Outcome: Yes, Actual Outcome: Yes
+2024-11-14 13:51:15,446 - Instance: {'Outlook': 'Sunny', 'Temperature': 'Mild', 'Humidity': 'High', 'Wind': 'Weak'}, Predicted Outcome: No, Actual Outcome: No
+2024-11-14 13:51:15,446 - Instance: {'Outlook': 'Sunny', 'Temperature': 'Cool', 'Humidity': 'Normal', 'Wind': 'Weak'}, Predicted Outcome: Yes, Actual Outcome: Yes
+2024-11-14 13:51:15,447 - Instance: {'Outlook': 'Rain', 'Temperature': 'Mild', 'Humidity': 'Normal', 'Wind': 'Weak'}, Predicted Outcome: Yes, Actual Outcome: Yes
+2024-11-14 13:51:15,447 - Instance: {'Outlook': 'Sunny', 'Temperature': 'Mild', 'Humidity': 'Normal', 'Wind': 'Strong'}, Predicted Outcome: Yes, Actual Outcome: Yes
+2024-11-14 13:51:15,447 - Instance: {'Outlook': 'Overcast', 'Temperature': 'Mild', 'Humidity': 'High', 'Wind': 'Strong'}, Predicted Outcome: Yes, Actual Outcome: Yes
+2024-11-14 13:51:15,448 - Instance: {'Outlook': 'Overcast', 'Temperature': 'Hot', 'Humidity': 'Normal', 'Wind': 'Weak'}, Predicted Outcome: Yes, Actual Outcome: Yes
+2024-11-14 13:51:15,448 - Instance: {'Outlook': 'Rain', 'Temperature': 'Mild', 'Humidity': 'High', 'Wind': 'Strong'}, Predicted Outcome: No, Actual Outcome: No
