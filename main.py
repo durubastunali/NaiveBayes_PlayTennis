@@ -65,7 +65,8 @@ def evaluate(data):
         testInstance.pop('PlayTennis')
         prediction = naiveBayes(testInstance)
 
-        logging.info(f"Instance: {testInstance}, Predicted Outcome: {prediction}, Actual Outcome: {instance['PlayTennis']}")
+        logging.info(f"Instance: {testInstance}, Predicted Outcome: {prediction}, "
+                     f"Actual Outcome: {instance['PlayTennis']}")
 
         if prediction == instance['PlayTennis']:
             predictionCorrect += 1
