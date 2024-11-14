@@ -1,18 +1,6 @@
 import json
 
 
-def createModel(likelihoods, ppYes, ppNo):
-    model = {
-        "likelihoods": likelihoods,
-        "priorProbabilities": {
-            "Yes": ppYes,
-            "No": ppNo
-        }
-    }
-    with open('NaiveBayesModel.json', 'w') as json_file:
-        json.dump(model, json_file, indent=4)
-
-
 def naiveBayes(instance):
     with open('NaiveBayesModel.json', 'r') as json_file:
         model = json.load(json_file)
@@ -27,6 +15,67 @@ def naiveBayes(instance):
     if ppYes >= ppNo:
         return "Yes"
     return "No"
+
+
+def alignTable(instanceData, width):
+    tabLength = width - len(str(instanceData))
+    tab = ""
+    for i in range(tabLength):
+        tab += " "
+    return tab
+
+
+def printConfusionMatrix(confusionMatrix):
+    print("CONFUSION MATRIX")
+    print("                    Positive          Negative")
+    print("True               ", confusionMatrix['TruePositive'],
+          alignTable(confusionMatrix['TruePositive'], 16), confusionMatrix['TrueNegative'])
+    print("False              ", confusionMatrix['FalsePositive'],
+          alignTable(confusionMatrix['FalsePositive'], 16), confusionMatrix['FalseNegative'])
+
+
+def calculateConfusionMatrix(confusionMatrix, instance, prediction):
+    if instance['PlayTennis'] == 'Yes' and prediction == 'Yes':
+        confusionMatrix['TruePositive'] += 1
+    elif instance['PlayTennis'] == 'No' and prediction == 'No':
+        confusionMatrix['TrueNegative'] += 1
+    elif instance['PlayTennis'] == 'Yes' and prediction == 'No':
+        confusionMatrix['FalseNegative'] += 1
+    elif instance['PlayTennis'] == 'No' and prediction == 'Yes':
+        confusionMatrix['FalsePositive'] += 1
+    return confusionMatrix
+
+
+def evaluate(data):
+    predictionCorrect = 0
+    predictionIncorrect = 0
+    confusionMatrix = {'TruePositive': 0, 'FalsePositive': 0, 'FalseNegative': 0, 'TrueNegative': 0}
+    for instance in data:
+        testInstance = instance.copy()
+        testInstance.pop('Day')
+        testInstance.pop('PlayTennis')
+        prediction = naiveBayes(testInstance)
+        if prediction == instance['PlayTennis']:
+            predictionCorrect += 1
+        else:
+            predictionIncorrect += 1
+        confusionMatrix = calculateConfusionMatrix(confusionMatrix, instance, prediction)
+    accuracy = predictionCorrect / (predictionIncorrect + predictionCorrect) * 100
+
+    print(f"ACCURACY\nAccuracy of the algorithm is {accuracy:.2f}\n")
+    printConfusionMatrix(confusionMatrix)
+
+
+def createModel(likelihoods, ppYes, ppNo):
+    model = {
+        "likelihoods": likelihoods,
+        "priorProbabilities": {
+            "Yes": ppYes,
+            "No": ppNo
+        }
+    }
+    with open('NaiveBayesModel.json', 'w') as json_file:
+        json.dump(model, json_file, indent=4)
 
 
 def laplaceSmoothing(likelihoods, table, yes, no):
@@ -78,14 +127,6 @@ def calculateLikelihoods(data, yes, no):
     return likelihoods
 
 
-def alignTable(instanceData, width):
-    tabLength = width - len(str(instanceData))
-    tab = ""
-    for i in range(tabLength):
-        tab += " "
-    return tab
-
-
 def printData(data):
     print("Day  Outlook        Temperature    Humidity       Wind           PlayTennis")
     for instance in data:
@@ -124,10 +165,7 @@ def main():
     likelihoods = calculateLikelihoods(data, yes, no)
 
     createModel(likelihoods, ppYes, ppNo)
-
-    newInstance = {'Outlook': 'Rain', 'Temperature': 'Cool', 'Humidity': 'Normal', 'Wind': 'Strong'}
-    prediction = naiveBayes(newInstance)
-    print("The predicted PlayTennis result for the instance", newInstance, "is", prediction)
+    evaluate(data)
 
 
 if __name__ == "__main__":
