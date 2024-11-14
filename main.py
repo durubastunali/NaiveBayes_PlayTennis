@@ -78,8 +78,10 @@ def evaluate(data):  # Evaluation of the model
         confusionMatrix = calculateConfusionMatrix(confusionMatrix, instance, prediction)  # Update the confusion matrix
     accuracy = predictionCorrect / (predictionIncorrect + predictionCorrect) * 100  # Calculate the accuracy
 
+    print("EVALUATION (Where the given dataset is both training and test sets)-----------------------\n")
     print(f"ACCURACY\nAccuracy of the algorithm is {accuracy:.2f}\n")
     printConfusionMatrix(confusionMatrix)
+    print("------------------------------------------------------------------------------------------")
 
 
 def createModel(likelihoods, ppYes, ppNo):
@@ -184,6 +186,12 @@ def main():
 
     createModel(likelihoods, ppYes, ppNo)
     evaluate(data)
+
+    # Predicting new instance
+    newInstance = {'Outlook': 'Sunny', 'Temperature': 'Hot', 'Humidity': 'Normal', 'Wind': 'Weak'}
+    prediction = naiveBayes(newInstance)
+    print("\nThe prediction made for", newInstance, "is", prediction)
+
 
 
 if __name__ == "__main__":
