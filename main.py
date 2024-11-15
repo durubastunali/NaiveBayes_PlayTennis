@@ -13,18 +13,18 @@ def loggingFormat():  # Logging format
     )
 
 
-def naiveBayes(instance):
-    with open('NaiveBayesModel.json', 'r') as json_file:
+def naiveBayes(instance):  # Naive Bayes formula
+    with open('NaiveBayesModel.json', 'r') as json_file:  # Import the model and use the probabilities
         model = json.load(json_file)
     likelihoods = model["likelihoods"]
     ppYes = model["priorProbabilities"]["Yes"]
     ppNo = model["priorProbabilities"]["No"]
 
-    for attribute in instance:
+    for attribute in instance:  # Calculate "Yes" and "No" probabilities
         instanceValue = instance[attribute]
         ppYes *= likelihoods[attribute][instanceValue]["Yes"]
         ppNo *= likelihoods[attribute][instanceValue]["No"]
-    if ppYes >= ppNo:
+    if ppYes >= ppNo:  # Predict the outcome based on the higher probability
         return "Yes"
     return "No"
 
